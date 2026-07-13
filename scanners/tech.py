@@ -1,8 +1,17 @@
-import requests 
+import requests
+from typing import Any
 
-def detect_technology(url):
-    results = {
-        "technologies": []
+
+def detect_technology(url: str) -> dict[str, Any]:
+    """Detect web technologies used by the target.
+
+    Returns:
+        ``{"error": None, "technologies": [...]}`` on success,
+        ``{"error": "...", "technologies": []}`` on failure.
+    """
+    results: dict[str, Any] = {
+        "technologies": [],
+        "error": None,
     }
     try:
         response = requests.get(url, timeout=5, allow_redirects=True)

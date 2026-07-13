@@ -1,16 +1,25 @@
-import ssl 
-import socket 
+import ssl
+import socket
 from urllib.parse import urlparse
 from datetime import datetime, timezone
+from typing import Any
 
-def check_ssl(url):
+
+def check_ssl(url: str) -> dict[str, Any]:
+    """Validate HTTPS support and certificate status.
+
+    Returns:
+        ``{"error": None, "https_enabled": ..., "certificate_valid": ...}`` on success,
+        ``{"error": "...", ...}`` on failure.
+    """
     parsed_url = urlparse(url)
     hostname = parsed_url.hostname or parsed_url.path
-    results = {
-        "https_enabled": False, 
-        "certificate_valid": False 
+    results: dict[str, Any] = {
+        "https_enabled": False,
+        "certificate_valid": False,
+        "error": None,
     }
-    
+
     if not hostname:
         results["error"] = "Invalid URL format"
         return results

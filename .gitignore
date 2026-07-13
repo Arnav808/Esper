@@ -1,0 +1,29 @@
+# Environments
+venv/
+.env
+.venv/
+env/
+
+# Project Reports & Telemetry Artifacts
+reports/*.md
+reports/
+
+# Database
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

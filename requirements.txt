@@ -1,12 +1,19 @@
-# Environments
-venv/
-.env
+# Core
+flask>=3.0.0
+requests>=2.31.0
+python-dotenv>=1.0.0
 
-# Project Reports & Telemetry Artifacts
-reports/*.md
-reports/
+# AI/LLM
+langgraph>=0.2.0
 
-# Python Cache
-__pycache__/
-*.pyc
-.pytest_cache/
+# Graph engine
+networkx>=3.2.0
+
+# DNS enumeration
+dnspython>=2.4.0
+
+# PDF reports
+fpdf2>=2.7.0
+
+# Testing
+pytest>=7.4.0
